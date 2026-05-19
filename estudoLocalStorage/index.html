@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <footer class="footer1">
+        <h1 class="titulo">Gerenciador de Tarefas</h1>
+    </footer>
+      
+<section class="containerPai"> 
+    <section class="container">
+        <br> <label for="name">Insira o nome da tarefa:</label> <br> 
+        <input type="text" id="name" placeholder="Nome da tarefa"><br> <br>
+
+        <label for="category">Insira a categoria da tarefa:</label> <br>  
+        <select name="" id="category"> 
+            <option value="">Selecione uma categoria</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Pessoal">Pessoal</option>
+            <option value="Estudo">Estudo</option>
+            <option value="Casa">Casa</option>
+        </select> <br> <br>
+        <button id="addTask" onclick="addTask()">Adicionar Tarefa</button> <br>
+        <button id="exibirTask" onclick="exibirTarefa()">Exibir Tarefa</button> <br>
+        <button id="deleteTask" onclick="Excluirtarefa()">Excluir Tarefas</button>
+    </section>
+
+    <script>
+
+        let lista = JSON.parse(localStorage.getItem('lista')) || [];  
+
+        function addTask() { 
+
+            // Declarar as primeiras váriaveis para pegar dados do input
+
+            let name = document.getElementById('name').value;
+            let category = document.getElementById('category').value;
+
+            // Se os campos estiverem vazios, exibir alerta
+
+            if (name === "" || category === "") {
+                alert('Por favor preencha todos os campos!');
+                return;
+            }
+
+            // Armazenar dados no LocalStorage
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('category', category);
+
+            // Declarar um array para armazenar as tarefas
+
+            let novaTarefa = {
+                name: name,
+                category: category
+            }
+
+            // Chama com o push para chamar a função de adicionar a tarefa na lista e depois exibir a tarefa
+
+            lista.push(novaTarefa);
+            localStorage.setItem('lista', JSON.stringify(lista));
+
+            document.getElementById('name').value = "";
+            document.getElementById('category').value = "";
+
+            alert('Tarefa adicionada!');
+
+            exibirTarefa()
+        }
+        function Excluirtarefa() {
+            localStorage.clear();
+            lista = [];
+            alert('Tarefa excluída!');
+        }
+        function exibirTarefa() {
+
+            // Declarar a váriavel para pegar o elemento da lista e exibir as tarefas
+            let taskList = document.getElementById('taskList');
+            taskList.innerHTML = "";
+            lista.forEach(tarefa => {
+                taskList.innerHTML += `<p class="listaTarefas">${tarefa.name} - ${tarefa.category}</p>`
+            })
+        }
+    </script>
+
+    <section class="container">
+        <h2>Lista de Tarefas</h2>
+        <p id="taskList"></p> </section>
+    </section>
+</section>
+
+<footer class="footer2">
+    <div class="footer-content">
+    <p>Feito por: Maria Luiza Mendes Silva</p> <br> <br><p>Email: mariamsilva281120@gmail.com</p>
+</div>
+</footer>
+    
+</body>
+</html>
