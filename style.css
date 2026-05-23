@@ -1,0 +1,154 @@
+body {
+  font-family: 'Google Sans', sans-serif;
+  background-image: url(bg.png);
+  margin: 0;
+  padding: 0;
+}
+
+.titulo {
+  color: #6f273e;
+  font-family: 'Borel', sans-serif;
+  font-size: 29px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  color: #6f273e;
+  font-family: 'Google Sans', sans-serif;
+  font-style: normal;
+}
+
+h1:hover {
+  color: #a14e6b;  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  gap: 0px;
+  min-height: 250px;
+  margin: 20px;
+  background-color: #ffd4d7;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px rgba(145, 63, 63, 0.336);
+  padding: 20px;
+}
+
+.containerPai {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0px;
+  padding: 5px;
+}
+
+.listaTarefas {
+  background-color: #ffe9ee;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: #6f273e;
+  box-shadow: 0px 0px 5px rgba(145, 63, 63, 0.336);
+}
+
+.listaTarefas:hover {
+  transform: scale(1.05);
+}
+
+label {
+  font-size: 20px;
+  color: #6f273e;
+}
+
+input {
+  width: 200px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffe9ee;
+}
+
+select {
+  width: 210px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffe9ee;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #c56c88;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a14e6b;
+  transform: scale(1.05);
+}
+
+.imgicon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.footer1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0px 0px 10px #913f3f56;
+  font-size: 14px;
+  color: #6f273e;
+  background-color: #ffdfe6;
+  margin-top: 0%;
+  padding: 0 15px;
+  margin: 0px;
+  width: 100%;
+
+}
+
+.footer2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: baseline;
+  background-color: #ffdfe6;
+  color: #a14e6b;
+  margin-bottom: 0px;
+  bottom: 0;
+  box-shadow: 0px 0px 10px #913f3f56;
+  height: 60px;
+  left: 0;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
+p {
+  color: #6f273e;
+  margin: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  margin: 0 auto;
+  gap: 20px;
+}
